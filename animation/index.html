@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atom</title>
+<style>
+ .solar-system {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 100px auto;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: #fcbf49;
+  border-radius: 50%;
+  animation: rotate-sun 20s linear infinite;
+}
+
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 50%;
+  animation: orbit 10s linear infinite;
+}
+
+.mercury { animation-duration: 2s;  }
+.venus   { animation-duration: 4s;  }
+.earth   { animation-duration: 6s;  }
+.mars    { animation-duration: 8s;  }
+
+@keyframes rotate-sun {
+  0% {   transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes orbit {
+  0% { transform: translate(-50%, -50%) rotate(0deg) translateX(200px) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+
+</style>
+</head>
+<body>
+  <div class="solar-system">
+  <div class="sun"></div>
+  <div class="planet mercury"></div>
+  <div class="planet venus"></div>
+  <div class="planet earth"></div>
+  <div class="planet mars"></div>
+</div>
+
+</body>
+</html>
